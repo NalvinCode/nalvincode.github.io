@@ -1,9 +1,13 @@
-const homeBody = document.querySelector(".home-body");
 const navbar = document.querySelector(".navbar");
+const homeBody = document.querySelector(".home-body");
+const aboutBody = document.querySelector(".about-body");
+const prinBody = document.querySelector(".principals-body");
+const contBody = document.querySelector(".contact-body");
 const logos = document.querySelectorAll(".logos-table td a");
 const lengBtn = document.querySelector("#lenguage");
 const lengArrow = document.querySelector(".fa-sort-down");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
+const navItems = document.querySelectorAll(".navigation li a");
 
 $( document ).ready(function() {
     console.log( "ready!" );
@@ -18,20 +22,46 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.1
+    threshold: 1
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
     entries.forEach(entry => {
-        if(!entry.isIntersecting){
+        if(entry.isIntersecting){
+            let entryTarget = entry.target;
+
+            navItems.forEach(item => {
+                $(item).css("color", "#d3d0d0");
+            });
+    
             navbar.classList.add('dark');
-        }else{
-            navbar.classList.remove('dark');
+
+            switch(entryTarget){
+                case homeBody:
+                    $(navItems[0]).css("color", "#ffffff");
+                    navbar.classList.remove('dark');
+                break;
+                case aboutBody:
+                    $(navItems[1]).css("color", "#ffffff");
+                break;
+                case prinBody:
+                    $(navItems[2]).css("color", "#ffffff");
+                break;
+                case contBody:
+                    $(navItems[3]).css("color", "#ffffff");
+                break;
+                default:
+                break;
+            }
         }
     })
 }, observerOptions);
 
+
 observer.observe(homeBody);
+observer.observe(aboutBody);
+observer.observe(prinBody);
+observer.observe(contBody);
 
 //Carousel
 
@@ -91,7 +121,9 @@ logos.forEach(item => {
 lengBtn.addEventListener("click", function(){
     if(lengDropdown.style.opacity == 1){
         $(lengDropdown).css("opacity", "0");
+        $(lengDropdown).children("button").css("cursor", "none");
     }else{
         $(lengDropdown).css("opacity", "1")
+        $(lengDropdown).children("button").css("cursor", "pointer");
     }
 });
