@@ -182,8 +182,9 @@ p {
   cursor: pointer;
 }
 
-.home-content button:hover {
-  transform: scale(1.03);
+.home-content button:hover,
+.home-content button:focus {
+  opacity: 0.85;
 }
 
 .about-body {
@@ -397,8 +398,9 @@ p {
   border-radius: 15px;
 }
 
-.contact-card .send-button:hover {
-  transform: scale(1.02);
+.contact-card .send-button:hover,
+.contact-card .send-button:focus {
+  opacity: 0.85;
 }
 
 .contact-card .send-button i {
