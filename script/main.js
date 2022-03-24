@@ -22,7 +22,7 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 1
+    threshold: 0.7
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
@@ -121,9 +121,21 @@ logos.forEach(item => {
 lengBtn.addEventListener("click", function(){
     if(lengDropdown.style.opacity == 1){
         $(lengDropdown).css("opacity", "0");
-        $(lengDropdown).children("button").css("cursor", "none");
+        $('.lenguage-dropdown div').each(function() {
+            $( this ).css("cursor", "default");
+          });
+
+        $('.lenguage-dropdown div').each(function() {
+            $( this ).css("pointer-events", "none");
+        });
     }else{
-        $(lengDropdown).css("opacity", "1")
-        $(lengDropdown).children("button").css("cursor", "pointer");
+        $(lengDropdown).css("opacity", "1");
+        $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {
+            $( this ).css("cursor", "pointer");
+          });
+
+        $('.lenguage-dropdown div').each(function() {
+            $( this ).css("pointer-events", "auto");
+        });
     }
 });

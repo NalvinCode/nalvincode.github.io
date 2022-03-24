@@ -112,20 +112,50 @@ p {
   z-index: 9999;
   opacity: 0;
   transition: 0.2s;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--home-body-font);
+  padding-top: 1rem;
 }
 
-.lenguage-dropdown ul {
-  list-style: none;
-  align-items: center;
+.lenguage-dropdown div {
+  padding: 0 0.5rem 0 0.5rem;
+  text-align: center;
 }
 
-.lenguage-dropdown ul button {
-  font-family: var(--navbar-font);
-  font-weight: var(--navbar-font-weight);
-  font-size: 1rem;
-  background-color: #ffffff;
-  border: none;
-  font-style: 900;
+.lenguage-dropdown .spanish-div,
+.lenguage-dropdown .english-div {
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.lenguage-dropdown .spanish-div:hover,
+.lenguage-dropdown .english-div:hover {
+  background-color: #dddddd;
+}
+
+.lenguage-dropdown .spanish-p,
+.lenguage-dropdown .usa-p {
+  margin: 0;
+}
+
+.lenguage-dropdown .spanish-p::before,
+.lenguage-dropdown .usa-p::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 32px;
+  float: left;
+}
+
+.lenguage-dropdown .spanish-p::before {
+  background: url('../media/icons8-argentina-32.png') no-repeat;
+}
+
+.lenguage-dropdown .usa-p::before {
+  background: url('../media/icons8-usa-32.png') no-repeat;
 }
 
 .home-background {
@@ -423,7 +453,7 @@ p {
   transform: scale(0.8);
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0px;
