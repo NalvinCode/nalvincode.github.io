@@ -8,6 +8,7 @@ const lengBtn = document.querySelector("#lenguage");
 const lengArrow = document.querySelector(".fa-sort-down");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
 const navItems = document.querySelectorAll(".navigation li a");
+const lengSelect = document.querySelectorAll(".spanish-div, .english-div")
 
 $( document ).ready(function() {
     console.log( "ready!" );
