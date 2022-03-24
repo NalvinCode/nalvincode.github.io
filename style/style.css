@@ -423,7 +423,7 @@ p {
   transform: scale(0.8);
 }
 
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
   h1 {
     font-size: 1.5rem;
     margin-bottom: 0px;
