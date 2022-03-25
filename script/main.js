@@ -11,11 +11,10 @@ const navItems = document.querySelectorAll(".navigation li a");
 const lengSelect = document.querySelectorAll(".spanish-div, .english-div")
 
 $( document ).ready(function() {
-    console.log( "ready!" );
     let dropdownWth = lengDropdown.clientWidth;
-    let lengArroWth = lengArrow.clientWidth;
-    let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left) - (dropdownWth / 2)
+    let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left) - (dropdownWth / 2);
     $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
+    console.log( "ready!" );
 });
 
 //Intersection Observer
@@ -131,6 +130,12 @@ lengBtn.addEventListener("click", function(){
             $( this ).css("pointer-events", "none");
         });
     }else{
+        let dropdownWth = lengDropdown.clientWidth;
+        let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left) - (dropdownWth / 2);
+        if(lengDropdown.getBoundingClientRect().left != moveTo){
+            $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
+        }
+
         $(lengDropdown).css("opacity", "1");
         $(lengDropdown).css("z-index", "9999");
         $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {

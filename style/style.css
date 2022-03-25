@@ -33,7 +33,7 @@ h1 {
   font-family: var(--navbar-font);
   font-weight: 900;
   margin-bottom: 10px;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
 
 p {
@@ -101,7 +101,7 @@ p {
   clip-path: polygon(50% 0, 53% 5%, 100% 5%, 100% 100%, 0 100%, 0 5%, 47% 5%);
   position: fixed;
   top: 9vh;
-  z-index: 9999;
+  z-index: -1;
   opacity: 0;
   transition: 0.2s;
   padding: 0;
@@ -222,6 +222,7 @@ p {
 .about-body .about-content {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 70vh;
   margin-top: 2rem;
 }
@@ -229,8 +230,7 @@ p {
 .about-content .about-card {
   display: flex;
   flex-direction: column;
-  background-size: contain;
-  justify-content: space-evenly;
+  justify-content: space-around;
   box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
@@ -246,6 +246,7 @@ p {
     #e8e6e5,
     #e1e1df
   );
+  max-height: 80%;
 }
 
 .about-card .card-header {
@@ -256,7 +257,7 @@ p {
 }
 
 .about-card .card-header i {
-  font-size: 2.5rem;
+  font-size: 3rem;
   color: #004f6e;
   margin-bottom: 0.5rem;
 }
@@ -274,7 +275,7 @@ p {
 }
 
 .about-card .about-text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-family: var(--home-body-font);
   text-align: justify;
   margin-bottom: 0;
@@ -303,8 +304,8 @@ p {
 }
 
 .logos-table img {
-  height: 55%;
-  width: 55%;
+  height: 40%;
+  width: 40%;
   transition: 0.2s;
   cursor: pointer;
 }
@@ -384,6 +385,7 @@ p {
   font-size: 1rem;
   padding: 0.5rem;
   transition: 0.2s;
+  height: 40%;
 }
 
 .contact-inputs input::placeholder,
@@ -497,8 +499,25 @@ p {
     width: 200px;
   }
 
+  .about-content .about-card {
+    max-height: 90%;
+  }
+
+  .about-card .card-header i {
+    font-size: 2.2rem;
+  }
+
+  .about-card .card-header h1 {
+    font-size: 1.2rem;
+  }
+
   .about-card .about-text {
     font-size: 1rem;
+  }
+
+  .logos-table img {
+    height: 50%;
+    width: 50%;
   }
 
   .contact-inputs textarea {
