@@ -122,6 +122,7 @@ logos.forEach(item => {
 lengBtn.addEventListener("click", function(){
     if(lengDropdown.style.opacity == 1){
         $(lengDropdown).css("opacity", "0");
+        $(lengDropdown).css("z-index", "-1");
         $('.lenguage-dropdown div').each(function() {
             $( this ).css("cursor", "default");
           });
@@ -131,6 +132,7 @@ lengBtn.addEventListener("click", function(){
         });
     }else{
         $(lengDropdown).css("opacity", "1");
+        $(lengDropdown).css("z-index", "9999");
         $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {
             $( this ).css("cursor", "pointer");
           });
