@@ -620,6 +620,7 @@ p {
 
   .principals-content .logos-table-sm {
     display: block;
+    border-collapse: collapse;
   }
 
   .logos-table-sm td {
@@ -630,11 +631,12 @@ p {
     height: auto;
   }
 
+  .logos-table-sm tr {
+  }
+
   .logos-table-sm img {
-    height: 30%;
-    width: 30%;
-    transition: 0.2s;
-    cursor: pointer;
+    height: 35%;
+    width: 35%;
   }
 
   .logos-table-sm img:hover {
@@ -646,11 +648,7 @@ p {
   }
 
   .logos-table-sm hr {
-    background-color: #828282;
-    width: 20%;
-    height: 2px;
-    border: none;
-    transition: 0.2s;
+    display: none;
   }
 
   .contact-body {
