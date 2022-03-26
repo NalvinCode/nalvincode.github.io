@@ -4,11 +4,11 @@ const aboutBody = document.querySelector(".about-body");
 const prinBody = document.querySelector(".principals-body");
 const contBody = document.querySelector(".contact-body");
 const logos = document.querySelectorAll(".logos-table td a");
-const lengBtn = document.querySelector("#lenguage");
-const lengArrow = document.querySelector(".fa-sort-down");
+const lengBtn = document.querySelector(".lenguage");
+const lengArrow = document.querySelector(".lenguage i");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
 const navItems = document.querySelectorAll(".navigation li a");
-const lengSelect = document.querySelectorAll(".spanish-div, .english-div")
+const lengSelect = document.querySelectorAll(".spanish-div, .english-div");
 
 $( document ).ready(function() {
     let dropdownWth = lengDropdown.clientWidth;
@@ -131,13 +131,15 @@ lengBtn.addEventListener("click", function(){
         });
     }else{
         let dropdownWth = lengDropdown.clientWidth;
-        let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left) - (dropdownWth / 2);
+        let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left 
+                     + (lengArrow.clientWidth / 2)) 
+                     - (dropdownWth / 2);
         if(lengDropdown.getBoundingClientRect().left != moveTo){
             $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
         }
 
         $(lengDropdown).css("opacity", "1");
-        $(lengDropdown).css("z-index", "9999");
+        $(lengDropdown).css("z-index", "999999");
         $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {
             $( this ).css("cursor", "pointer");
           });

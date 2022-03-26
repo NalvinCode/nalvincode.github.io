@@ -52,9 +52,6 @@ p {
   background-color: #00000052;
   justify-content: space-around;
   align-items: center;
-  font-family: var(--navbar-font);
-  font-weight: var(--navbar-font-weight);
-  color: var(--navbar-font-color);
   height: 10%;
   width: 100%;
   position: fixed;
@@ -73,19 +70,25 @@ p {
   background-color: #2e2d2d;
 }
 
-.navbar .navigation {
+.navigation {
   display: flex;
   align-items: center;
   margin-right: 40px;
+  font-family: var(--navbar-font);
+  font-weight: var(--navbar-font-weight);
+  color: var(--navbar-font-color);
 }
 
 .navigation ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
   margin-bottom: 0;
 }
 
 .navigation li {
   display: inline-block;
-  margin-right: 40px;
   font-size: 1rem;
 }
 
@@ -93,12 +96,17 @@ p {
   transition: 0.2s;
 }
 
-.navigation li a:not(#lenguage):focus {
+.navigation li a:not(.lenguage):focus {
   color: #ffffff;
 }
 
-#lenguage {
+.lenguage {
   cursor: pointer;
+  margin: 0;
+}
+
+.hamburguer-navigation {
+  display: none;
 }
 
 .lenguage-dropdown {
@@ -419,6 +427,7 @@ p {
   align-items: center;
   flex-direction: column;
   width: 50%;
+  margin: 0 1rem 0 1rem;
 }
 
 .contact-line i,
@@ -435,7 +444,7 @@ p {
 
 .contact-info iframe {
   margin-top: 1rem;
-  width: 75%;
+  width: 100%;
   height: 45%;
 }
 
@@ -564,6 +573,53 @@ p {
 
   .navbar img {
     height: 45px;
+  }
+
+  .hamburguer-navigation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #2e2d2df6;
+    z-index: 99999;
+  }
+
+  .hamburguer-navigation .close-navigation {
+    font-size: 2rem;
+    color: #ffffff;
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+  }
+
+  .hamburguer-navigation .navigation {
+    margin: 0;
+  }
+
+  .lenguage {
+    height: auto;
+    width: auto;
+    position: absolute;
+    top: 2rem;
+    font-size: 2rem;
+    color: white;
+  }
+
+  .hamburguer-navigation .navigation ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+    margin: 0;
+  }
+
+  .hamburguer-navigation .navigation ul li {
+    margin: 0;
+    font-size: 2rem;
   }
 
   .home-body .home-content {
