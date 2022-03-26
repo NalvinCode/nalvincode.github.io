@@ -9,6 +9,9 @@ const lengArrow = document.querySelector(".lenguage i");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
 const navItems = document.querySelectorAll(".navigation li a");
 const lengSelect = document.querySelectorAll(".spanish-div, .english-div");
+const hamburger = document.querySelector(".navbar .hamburger")
+const hambNav = document.querySelector(".hamburger-navigation");
+const hamBtns = document.querySelectorAll(".hamburger-navigation a, .hamburger-navigation .close-navigation");
 
 $( document ).ready(function() {
     let dropdownWth = lengDropdown.clientWidth;
@@ -148,4 +151,16 @@ lengBtn.addEventListener("click", function(){
             $( this ).css("pointer-events", "auto");
         });
     }
+});
+
+hamburger.addEventListener("click", function(){
+    if(lengDropdown.style.transform){
+        $(hambNav).css("transform", "translateX(0)");
+    }
+});
+
+hamBtns.forEach(e => {
+    e.addEventListener("click", function(){
+        $(hambNav).css("transform", "translateX(100%)");
+    });
 });
