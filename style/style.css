@@ -676,6 +676,7 @@ p {
   .principals-body .principals-content {
     height: auto;
     align-items: center;
+    padding-top: 2rem;
   }
 
   .principals-content .logos-table {
@@ -696,8 +697,8 @@ p {
   }
 
   .logos-table-sm img {
-    height: 35%;
-    width: 35%;
+    height: 40%;
+    width: 40%;
   }
 
   .logos-table-sm img:hover {
