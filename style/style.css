@@ -586,7 +586,7 @@ p {
     background-color: #2e2d2df6;
     z-index: 99999;
     transform: translateX(100%);
-    transition: 1s;
+    transition: 0.5s;
   }
 
   .hamburger-navigation .close-navigation {
