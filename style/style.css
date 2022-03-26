@@ -140,7 +140,9 @@ p {
 }
 
 .lenguage-dropdown .spanish-div:hover,
-.lenguage-dropdown .english-div:hover {
+.lenguage-dropdown .english-div:hover,
+.lenguage-dropdown .spanish-div:focus,
+.lenguage-dropdown .english-div:focus {
   background-color: #dddddd;
 }
 
