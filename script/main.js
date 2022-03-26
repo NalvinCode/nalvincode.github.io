@@ -4,7 +4,7 @@ const aboutBody = document.querySelector(".about-body");
 const prinBody = document.querySelector(".principals-body");
 const contBody = document.querySelector(".contact-body");
 const logos = document.querySelectorAll(".logos-table td a");
-const lengBtn = document.querySelector(".lenguage");
+const lengBtns = document.querySelectorAll(".lenguage, .lenguage-sm");
 const lengArrow = document.querySelector(".lenguage i");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
 const navItems = document.querySelectorAll(".navigation li a");
@@ -121,42 +121,48 @@ logos.forEach(item => {
     });
   })
 
-lengBtn.addEventListener("click", function(){
-    if(lengDropdown.style.opacity == 1){
-        $(lengDropdown).css("opacity", "0");
-        $(lengDropdown).css("z-index", "-1");
-        $('.lenguage-dropdown div').each(function() {
-            $( this ).css("cursor", "default");
-          });
+lengBtns.forEach(e => {
+    e.addEventListener("click", function(){
+        let lengIcon = e.firstChild;
 
-        $('.lenguage-dropdown div').each(function() {
-            $( this ).css("pointer-events", "none");
-        });
-    }else{
-        let dropdownWth = lengDropdown.clientWidth;
-        let moveTo = (window.scrollX + lengArrow.getBoundingClientRect().left 
-                     + (lengArrow.clientWidth / 2)) 
-                     - (dropdownWth / 2);
-        if(lengDropdown.getBoundingClientRect().left != moveTo){
-            $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
+        if(lengDropdown.style.opacity == 1){
+            $(lengDropdown).css("opacity", "0");
+            $(lengDropdown).css("z-index", "-1");
+            $('.lenguage-dropdown div').each(function() {
+                $( this ).css("cursor", "default");
+              });
+    
+            $('.lenguage-dropdown div').each(function() {
+                $( this ).css("pointer-events", "none");
+            });
+        }else{
+            let dropdownWth = lengDropdown.clientWidth;
+            let moveTo = (window.scrollX + lengIcon.getBoundingClientRect().left 
+                         + (lengIcon.clientWidth / 2)) 
+                         - (dropdownWth / 2);
+            if(lengDropdown.getBoundingClientRect().left != moveTo){
+                if(e == document.querySelector(".lenguage-sm")){
+                    $(lengDropdown).css("transform", "translate(" + moveTo + "px, 10px)");
+                }else{
+                    $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
+                }
+            }
+    
+            $(lengDropdown).css("opacity", "1");
+            $(lengDropdown).css("z-index", "999999");
+            $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {
+                $( this ).css("cursor", "pointer");
+              });
+    
+            $('.lenguage-dropdown div').each(function() {
+                $( this ).css("pointer-events", "auto");
+            });
         }
-
-        $(lengDropdown).css("opacity", "1");
-        $(lengDropdown).css("z-index", "999999");
-        $('.lenguage-dropdown .spanish-div, .lenguage-dropdown .english-div').each(function() {
-            $( this ).css("cursor", "pointer");
-          });
-
-        $('.lenguage-dropdown div').each(function() {
-            $( this ).css("pointer-events", "auto");
-        });
-    }
-});
+    });
+})
 
 hamburger.addEventListener("click", function(){
-    if(lengDropdown.style.transform){
-        $(hambNav).css("transform", "translateX(0)");
-    }
+    $(hambNav).css("transform", "translateX(0)");
 });
 
 hamBtns.forEach(e => {

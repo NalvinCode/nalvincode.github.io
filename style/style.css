@@ -548,7 +548,7 @@ p {
   }
 }
 
-@media (max-width: 800px), (max-height: 450px) {
+@media (max-width: 850px), (max-height: 450px) {
   .navbar {
     gap: 4rem;
     height: 4rem;
@@ -601,7 +601,7 @@ p {
     margin: 0;
   }
 
-  .lenguage {
+  .lenguage-sm {
     height: auto;
     width: auto;
     position: absolute;
