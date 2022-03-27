@@ -27,7 +27,7 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.7
+    threshold: 0.5
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
@@ -51,7 +51,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                     $(navItems[1]).css("color", "#ffffff");
                     aTemp = 0.75
                     for(let i = 0; i < abtCards.length; i++){
-                        $(abtCards[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
+                        $(abtCards[i]).css({"transition" : "" + aTemp + "s", "opacity" : "1" , "transform" : "translate(0)"});
                         aTemp += 0.25;
                     }
                 break;
@@ -61,7 +61,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                     let logos = document.querySelectorAll(".logos-table td, .logos-table-sm td");
                     for(let i = 0; i < logos.length; i++){
                         $(logos[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
-                        aTemp += 0.25;
+                        aTemp += 0.15;
                     }
                 break;
                 case contBody:

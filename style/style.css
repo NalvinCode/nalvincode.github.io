@@ -258,7 +258,7 @@ p {
     #e8e6e5,
     #e1e1df
   );
-  transform: translateY(50%);
+  transform: translate(0, 50%);
   opacity: 0;
 }
 
@@ -700,7 +700,7 @@ p {
     font-size: 1rem;
     height: auto;
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
 
   .logos-table-sm img {
