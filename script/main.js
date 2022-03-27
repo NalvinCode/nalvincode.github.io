@@ -3,7 +3,6 @@ const homeBody = document.querySelector(".home-body");
 const aboutBody = document.querySelector(".about-body");
 const prinBody = document.querySelector(".principals-body");
 const contBody = document.querySelector(".contact-body");
-const logos = document.querySelectorAll(".logos-table td a");
 const lengBtns = document.querySelectorAll(".lenguage, .lenguage-sm");
 const lengArrow = document.querySelector(".lenguage i");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
@@ -12,6 +11,9 @@ const lengSelect = document.querySelectorAll(".spanish-div, .english-div");
 const hamburger = document.querySelector(".navbar .hamburger")
 const hambNav = document.querySelector(".hamburger-navigation");
 const hamBtns = document.querySelectorAll(".hamburger-navigation a, .hamburger-navigation .close-navigation");
+const abtCards = document.querySelectorAll(".about-content .about-card")
+const logos_a = document.querySelectorAll(".logos-table td a");
+const contCard = document.querySelector(".contact-content .contact-card")
 
 $( document ).ready(function() {
     let dropdownWth = lengDropdown.clientWidth;
@@ -38,6 +40,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
             });
     
             navbar.classList.add('dark');
+            var aTemp = 0.75;
 
             switch(entryTarget){
                 case homeBody:
@@ -46,15 +49,24 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 break;
                 case aboutBody:
                     $(navItems[1]).css("color", "#ffffff");
-                    $(".about-card:nth-child(1)").css({"transition" : "0.75s" , "opacity" : "1" , "transform" : "translate(0)"});
-                    $(".about-card:nth-child(2)").css({"transition" : "1s" , "opacity" : "1" , "transform" : "translate(0)"});
-                    $(".about-card:nth-child(3)").css({"transition" : "1.25s" , "opacity" : "1" , "transform" : "translate(0)"});
+                    aTemp = 0.75
+                    for(let i = 0; i < abtCards.length; i++){
+                        $(abtCards[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
+                        aTemp += 0.25;
+                    }
                 break;
                 case prinBody:
                     $(navItems[2]).css("color", "#ffffff");
+                    aTemp = 0.75
+                    let logos = document.querySelectorAll(".logos-table td, .logos-table-sm td");
+                    for(let i = 0; i < logos.length; i++){
+                        $(logos[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
+                        aTemp += 0.25;
+                    }
                 break;
                 case contBody:
                     $(navItems[3]).css("color", "#ffffff");
+                    $(contCard).css({"transition" : "0.75s", "opacity" : "1" , "transform" : "translate(0)"});
                 break;
                 default:
                 break;
@@ -87,7 +99,7 @@ $('.to-section').click(function(e){
 
 //Event-listeners
 
-logos.forEach(item => {
+logos_a.forEach(item => {
     //Logo underline expand when hover the logo
     item.addEventListener("mouseover", function(){
         anchor = $(item);

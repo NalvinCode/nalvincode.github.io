@@ -316,8 +316,9 @@ p {
   text-align: center;
   vertical-align: bottom;
   font-size: 1.1rem;
-  opacity: 0.9;
   height: auto;
+  opacity: 0;
+  transform: translateY(50%);
 }
 
 .logos-table img {
@@ -368,6 +369,8 @@ p {
   padding: 1.5rem;
   width: 50%;
   height: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
 }
 
 .contact-card .contact-inputs {
@@ -695,8 +698,9 @@ p {
     text-align: center;
     vertical-align: bottom;
     font-size: 1rem;
-    opacity: 0.9;
     height: auto;
+    opacity: 0;
+    transform: translateY(100%);
   }
 
   .logos-table-sm img {
