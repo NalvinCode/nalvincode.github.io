@@ -140,9 +140,7 @@ p {
 }
 
 .lenguage-dropdown .spanish-div:hover,
-.lenguage-dropdown .english-div:hover,
-.lenguage-dropdown .spanish-div:focus,
-.lenguage-dropdown .english-div:focus {
+.lenguage-dropdown .english-div:hover {
   background-color: #dddddd;
 }
 
@@ -260,6 +258,8 @@ p {
     #e8e6e5,
     #e1e1df
   );
+  transform: translateY(50%);
+  opacity: 0;
 }
 
 .about-card .card-header {
@@ -664,6 +664,7 @@ p {
   .about-content .about-card {
     width: 100%;
     justify-content: center;
+    transform: translate(-50%, 0);
   }
 
   .about-card .about-text {

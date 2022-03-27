@@ -46,6 +46,9 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 break;
                 case aboutBody:
                     $(navItems[1]).css("color", "#ffffff");
+                    $(".about-card:nth-child(1)").css({"transition" : "0.75s" , "opacity" : "1" , "transform" : "translate(0)"});
+                    $(".about-card:nth-child(2)").css({"transition" : "1s" , "opacity" : "1" , "transform" : "translate(0)"});
+                    $(".about-card:nth-child(3)").css({"transition" : "1.25s" , "opacity" : "1" , "transform" : "translate(0)"});
                 break;
                 case prinBody:
                     $(navItems[2]).css("color", "#ffffff");
@@ -65,26 +68,6 @@ observer.observe(homeBody);
 observer.observe(aboutBody);
 observer.observe(prinBody);
 observer.observe(contBody);
-
-//Carousel
-
-const carouselButtons = document.querySelectorAll("[data-carousel-button]");
-
-carouselButtons.forEach(button => {
-    button.addEventListener("click", () => {
-        const offset = button.dataset.carouselButton === "next" ? 1 : -1;
-        const slides = button.closest("[data-carousel]").querySelector("[data-slides]");
-
-        const activeSlide = slides.querySelector("[data-active]");
-        let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-
-         if(newIndex < 0) newIndex = slides.children.length - 1;
-         if(newIndex >= slides.children.length) newIndex = 0;
-
-        slides.children[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-    })
-})
 
 //Scroll-to animation
 
@@ -142,7 +125,7 @@ lengBtns.forEach(e => {
                          - (dropdownWth / 2);
             if(lengDropdown.getBoundingClientRect().left != moveTo){
                 if(e == document.querySelector(".lenguage-sm")){
-                    $(lengDropdown).css("transform", "translate(" + moveTo + "px, 10px)");
+                    $(lengDropdown).css("transform", "translate(" + moveTo + "px, 5px)");
                 }else{
                     $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
                 }
