@@ -27,7 +27,7 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.5
+    threshold: 0.2
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
@@ -163,5 +163,14 @@ hamburger.addEventListener("click", function(){
 hamBtns.forEach(e => {
     e.addEventListener("click", function(){
         $(hambNav).css("transform", "translateX(100%)");
+        $(lengDropdown).css("opacity", "0");
+        $(lengDropdown).css("z-index", "-1");
+        $('.lenguage-dropdown div').each(function() {
+            $( this ).css("cursor", "default");
+          });
+
+        $('.lenguage-dropdown div').each(function() {
+            $( this ).css("pointer-events", "none");
+        });
     });
 });
