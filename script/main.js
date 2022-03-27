@@ -27,7 +27,7 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2
+    threshold: 0.35
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
@@ -61,7 +61,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                     let logos = document.querySelectorAll(".logos-table td, .logos-table-sm td");
                     for(let i = 0; i < logos.length; i++){
                         $(logos[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
-                        aTemp += 0.05;
+                        aTemp += 0.10;
                     }
                 break;
                 case contBody:
