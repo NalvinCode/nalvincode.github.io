@@ -39,7 +39,6 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 $(item).css("color", "#d3d0d0");
             });
     
-            navbar.classList.add('dark');
             var aTemp = 0.75;
 
             switch(entryTarget){
@@ -49,6 +48,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 break;
                 case aboutBody:
                     $(navItems[1]).css("color", "#ffffff");
+                    navbar.classList.add('dark');
                     aTemp = 0.75
                     for(let i = 0; i < abtCards.length; i++){
                         $(abtCards[i]).css({"transition" : "" + aTemp + "s", "opacity" : "1" , "transform" : "translate(0)"});
