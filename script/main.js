@@ -61,7 +61,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                     let logos = document.querySelectorAll(".logos-table td, .logos-table-sm td");
                     for(let i = 0; i < logos.length; i++){
                         $(logos[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
-                        aTemp += 0.15;
+                        aTemp += 0.05;
                     }
                 break;
                 case contBody:
