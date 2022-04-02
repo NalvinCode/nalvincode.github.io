@@ -713,6 +713,11 @@ p {
     text-align: center;
   }
 
+  .logos-table-sm .logo-row .logo-cell img {
+    height: 6em;
+    width: 6em;
+  }
+
   .logos-table-sm .logo-row .logo-cell hr {
     display: none;
   }
