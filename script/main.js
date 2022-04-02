@@ -12,7 +12,7 @@ const hamburger = document.querySelector(".navbar .hamburger")
 const hambNav = document.querySelector(".hamburger-navigation");
 const hamBtns = document.querySelectorAll(".hamburger-navigation a, .hamburger-navigation .close-navigation");
 const abtCards = document.querySelectorAll(".about-content .about-card")
-const logos_a = document.querySelectorAll(".logos-table td a");
+const logos_a = document.querySelectorAll(".logos-table div a");
 const contCard = document.querySelector(".contact-content .contact-card")
 
 $( document ).ready(function() {
@@ -58,7 +58,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 case prinBody:
                     $(navItems[2]).css("color", "#ffffff");
                     aTemp = 0.75
-                    let logos = document.querySelectorAll(".logos-table td, .logos-table-sm td");
+                    let logos = document.querySelectorAll(".logos-table .logo-row, .logos-table-sm .logo-row");
                     for(let i = 0; i < logos.length; i++){
                         $(logos[i]).css({"transition" : "" + aTemp + "s", "opacity" : "0.9" , "transform" : "translate(0)"});
                         aTemp += 0.10;
@@ -102,17 +102,23 @@ $('.to-section').click(function(e){
 logos_a.forEach(item => {
     //Logo underline expand when hover the logo
     item.addEventListener("mouseover", function(){
-        anchor = $(item);
-        anchor.next().css("width", "50%");
+        let anchor = $(item);
+        let img = anchor.children("img");
+        let src = img.attr("src");
+        src = src.slice(0, src.indexOf(".")) + "_C.png";
+        img.attr("src", src);
+        anchor.next().css("width", "90%");
         anchor.next().css("background-color", "#d32f12");
-        anchor.closest("td").css("opacity", "1");
     });
     //Logo underline contract when unhover the logo
     item.addEventListener("mouseout", function(){
-        anchor = $(item);
-        anchor.next().css("width", "20%");
+        let anchor = $(item);
+        let img = anchor.children("img");
+        let src = img.attr("src");
+        src = src.slice(0, src.indexOf("_")) + ".png";
+        img.attr("src", src);
+        anchor.next().css("width", "40%");
         anchor.next().css("background-color", "#828282");
-        anchor.closest("td").css("opacity", "0.9");
     });
   })
 
