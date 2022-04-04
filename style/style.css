@@ -228,8 +228,8 @@ p {
 }
 
 .about-body {
-  padding: 10vh;
-  padding-bottom: 0;
+  height: 100vh;
+  padding-top: 1rem;
 }
 
 .about-body .about-content {
@@ -296,8 +296,8 @@ p {
 }
 
 .principals-body {
-  padding: 10vh;
-  padding-bottom: 0;
+  height: 100vh;
+  padding-top: 1rem;
 }
 
 .principals-body .principals-content {
@@ -350,8 +350,8 @@ p {
 }
 
 .contact-body {
-  padding: 10vh;
-  padding-bottom: 0;
+  height: 100vh;
+  padding-top: 1rem;
 }
 
 .contact-body .contact-content {
@@ -660,8 +660,7 @@ p {
   }
 
   .about-body {
-    padding: 2rem 0 0 0;
-    height: auto;
+    padding-top: 2rem;
   }
 
   .about-body .about-content {
@@ -682,7 +681,7 @@ p {
   }
 
   .principals-body {
-    padding: 4rem 0 0 0;
+    padding-top: 2rem;
     height: auto;
   }
 
@@ -723,7 +722,7 @@ p {
   }
 
   .contact-body {
-    padding: 4rem 0 0 0;
+    padding-top: 2rem;
     height: auto;
   }
 

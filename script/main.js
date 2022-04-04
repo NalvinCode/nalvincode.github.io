@@ -91,7 +91,7 @@ $('.to-section').click(function(e){
         if(target.length){
             $('body, html').stop();
             let docOffset = $(document).scrollTop;
-            let scrollTo = target.offset().top;
+            let scrollTo = target.offset().top - navbar.clientHeight;
             $('body, html').animate({scrollTop: scrollTo+'px'}, 650);
         }
     }
