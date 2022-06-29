@@ -13,7 +13,20 @@ const hambNav = document.querySelector(".hamburger-navigation");
 const hamBtns = document.querySelectorAll(".hamburger-navigation a, .hamburger-navigation .close-navigation");
 const abtCards = document.querySelectorAll(".about-content .about-card")
 const logos_a = document.querySelectorAll(".logos-table div a");
-const contCard = document.querySelector(".contact-content .contact-card")
+const contCard = document.querySelector(".contact-content .contact-card");
+
+const nameForm = document.querySelector('input[name="name"]');
+const lastNameForm = document.querySelector('input[name="lastName"]');
+const emailForm = document.querySelector('input[name="email"]');
+const phoneForm = document.querySelector('input[name="phone"]');
+const messageForm = document.querySelector('textarea[name="message"]');
+
+const formFields = document.querySelectorAll('.contact-card input, .contact-card textarea');
+
+const phoneInput = window.intlTelInput(phoneForm, {
+  utilsScript:
+    "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+});
 
 $( document ).ready(function() {
     let dropdownWth = lengDropdown.clientWidth;
@@ -180,3 +193,79 @@ hamBtns.forEach(e => {
         });
     });
 });
+
+formFields.forEach(element => {
+    $(element).bind("input focusin", function(){
+        let isValid = true;
+        switch(element){
+            case nameForm:
+                let nameValue = nameForm.value;
+                if (nameValue.length == 0) {
+                    isValid = false;
+                }
+                setFieldColor(element, isValid);
+            break;
+            case lastNameForm:
+                let lastNameValue = lastNameForm.value;
+                if (lastNameValue.length == 0) {
+                    isValid = false;
+                }
+                setFieldColor(element, isValid);
+            break;
+            case emailForm:
+                let emailValue = emailForm.value;
+                let isEmail = emailValue.match(
+                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                );
+                if (emailValue.length == 0 ||
+                    !isEmail) {
+                    isValid = false;
+                }
+                setFieldColor(element, isValid);
+            break;
+            case phoneForm:
+                let phoneValue = phoneForm.value;
+                let isPhone = phoneValue.match(
+                    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+                );
+                if (phoneValue.length == 0 ||
+                    !isPhone) {
+                  isValid = false;
+                }
+                setFieldColor(element, isValid);
+            break;
+            case messageForm:
+                let messageValue = messageForm.value;
+                if (messageValue.length == 0) {
+                    isValid = false;
+                }
+                setFieldColor(element, isValid);
+            break;
+        }
+    });
+
+    element.addEventListener("focusout", function(){
+        $(element).css("border-color", "#828282");
+        $(element).css("background-color", "#ffffff");
+    })
+});
+
+//Form validator
+
+function setFieldColor(input, isValid){
+    if(isValid){
+        $(input).css("border-color", "#5aff30");
+        $(input).css("background-color", "#5aff302a");
+        return
+    }
+    
+    if(input.value.length == 0){
+        $(input).css("border-color", "#828282");
+        $(input).css("background-color", "#8282822a");
+        return
+    }
+    
+    $(input).css("border-color", "#d32f12");
+    $(input).css("background-color", "#d32f122a");
+}
+

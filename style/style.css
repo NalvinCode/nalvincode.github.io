@@ -370,7 +370,7 @@ p {
   border: 1px solid #828282;
   padding: 1.5rem;
   width: 50%;
-  height: 50%;
+  height: auto;
   transform: translateX(-50%);
   opacity: 0;
 }
@@ -386,15 +386,29 @@ p {
 
 .contact-inputs input {
   height: 2rem;
-  width: 45%;
-  margin: 0.1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
   border: 1px solid #828282;
   border-radius: 15px;
   font-family: var(--home-body-font);
   font-size: 1rem;
-  padding: 0.2rem;
   text-align: center;
   transition: 0.2s;
+}
+
+.contact-inputs .iti--allow-dropdown{
+  width: 100%;
+  margin-bottom: 0.5rem;
+  height: 2.3rem;
+}
+
+.contact-inputs input[name = 'phone']{
+  padding: 0;
+  height: 100%;
+}
+
+.contact-inputs .iti--allow-dropdown ul{
+  font-family: var(--home-body-font);
 }
 
 .contact-inputs textarea {
@@ -462,7 +476,7 @@ p {
   font-weight: 600;
   height: 2.5rem;
   width: 7rem;
-  color: white;
+  color: #ffffff;
   border: 1px solid black;
   transition: 0.2s;
   cursor: pointer;
