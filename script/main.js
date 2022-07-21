@@ -3,7 +3,7 @@ const homeBody = document.querySelector(".home-body");
 const aboutBody = document.querySelector(".about-body");
 const prinBody = document.querySelector(".principals-body");
 const contBody = document.querySelector(".contact-body");
-const lengBtns = document.querySelectorAll(".lenguage, .lenguage-sm");
+const lengBtns = document.querySelectorAll(".lenguage, .lenguage-sm, .spanish-div, .english-div");
 const lengArrow = document.querySelector(".lenguage i");
 const lengDropdown = document.querySelector('.lenguage-dropdown');
 const navItems = document.querySelectorAll(".navigation li a");
@@ -194,55 +194,10 @@ hamBtns.forEach(e => {
     });
 });
 
+//Form dinamic validator
+
 formFields.forEach(element => {
-    $(element).bind("input focusin", function(){
-        let isValid = true;
-        switch(element){
-            case nameForm:
-                let nameValue = nameForm.value;
-                if (nameValue.length == 0) {
-                    isValid = false;
-                }
-                setFieldColor(element, isValid);
-            break;
-            case lastNameForm:
-                let lastNameValue = lastNameForm.value;
-                if (lastNameValue.length == 0) {
-                    isValid = false;
-                }
-                setFieldColor(element, isValid);
-            break;
-            case emailForm:
-                let emailValue = emailForm.value;
-                let isEmail = emailValue.match(
-                    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-                );
-                if (emailValue.length == 0 ||
-                    !isEmail) {
-                    isValid = false;
-                }
-                setFieldColor(element, isValid);
-            break;
-            case phoneForm:
-                let phoneValue = phoneForm.value;
-                let isPhone = phoneValue.match(
-                    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
-                );
-                if (phoneValue.length == 0 ||
-                    !isPhone) {
-                  isValid = false;
-                }
-                setFieldColor(element, isValid);
-            break;
-            case messageForm:
-                let messageValue = messageForm.value;
-                if (messageValue.length == 0) {
-                    isValid = false;
-                }
-                setFieldColor(element, isValid);
-            break;
-        }
-    });
+    $(element).bind("input focusin", function(){validateForm(element)});
 
     element.addEventListener("focusout", function(){
         $(element).css("border-color", "#828282");
@@ -251,6 +206,53 @@ formFields.forEach(element => {
 });
 
 //Form validator
+
+function validateForm(element){
+    let isValid = true;
+    switch(element){
+        case nameForm:
+            let nameValue = nameForm.value;
+            if (nameValue.length == 0) {
+                isValid = false;
+            }
+        break;
+        case lastNameForm:
+            let lastNameValue = lastNameForm.value;
+            if (lastNameValue.length == 0) {
+                isValid = false;
+            }
+        break;
+        case emailForm:
+            let emailValue = emailForm.value;
+            let isEmail = emailValue.match(
+                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            );
+            if (emailValue.length == 0 ||
+                !isEmail) {
+                isValid = false;
+            }
+        break;
+        case phoneForm:
+            let phoneValue = phoneForm.value;
+            let isPhone = phoneValue.match(
+                /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im
+            );
+            if (phoneValue.length == 0 ||
+                !isPhone) {
+              isValid = false;
+            }
+        break;
+        case messageForm:
+            let messageValue = messageForm.value;
+            if (messageValue.length == 0) {
+                isValid = false;
+            }
+        break;
+    }
+
+    setFieldColor(element, isValid);
+    return isValid
+}
 
 function setFieldColor(input, isValid){
     if(isValid){
@@ -269,3 +271,18 @@ function setFieldColor(input, isValid){
     $(input).css("background-color", "#d32f122a");
 }
 
+//Form send validator
+function verifyInfo(){
+    isValid = true
+    formFields.forEach(element => {
+        isValid = validateForm(element)
+    });
+
+    if(!isValid){
+        alert("Existen errores en el formulario")
+    }
+
+}
+//Send mail with information
+function collectInfo(){
+}

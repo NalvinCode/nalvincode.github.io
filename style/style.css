@@ -387,7 +387,7 @@ p {
 .contact-inputs input {
   height: 2rem;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
   border: 1px solid #828282;
   border-radius: 15px;
   font-family: var(--home-body-font);
@@ -396,9 +396,12 @@ p {
   transition: 0.2s;
 }
 
-.contact-inputs .iti--allow-dropdown{
+.contact-inputs .iti{
+  margin-bottom: 10px;
+}
+
+.contact-inputs .iti--allow-dropdown{ 
   width: 100%;
-  margin-bottom: 0.5rem;
   height: 2.3rem;
 }
 
@@ -414,7 +417,7 @@ p {
 .contact-inputs textarea {
   resize: none;
   width: 100%;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
   border: 1px solid #828282;
   border-radius: 15px;
   font-family: var(--home-body-font);
@@ -758,11 +761,11 @@ p {
   }
 
   .contact-card .contact-inputs input {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
   }
 
   .contact-card .contact-inputs textarea {
-    margin-bottom: 1rem;
+    margin-bottom: 10px;
   }
 
   .contact-card hr {

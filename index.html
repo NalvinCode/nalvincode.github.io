@@ -28,10 +28,10 @@
         </div>
         <div class="navigation">
             <ul>
-                <li><a class= "to-section" href="#home">INICIO</a></li>
-                <li><a class= "to-section" href="#about">NOSOTROS</a></li>
-                <li><a class= "to-section" href="#principals">REPRESENTACIONES</a></li>
-                <li><a class= "to-section" href="#contact">CONTACTO</a></li>
+                <li><a class= "to-section homeBtn" href="#home">INICIO</a></li>
+                <li><a class= "to-section aboutBtn" href="#about">NOSOTROS</a></li>
+                <li><a class= "to-section principalsBtn" href="#principals">REPRESENTACIONES</a></li>
+                <li><a class= "to-section contactBtn" href="#contact">CONTACTO</a></li>
                 <li class="lenguage"><i class="fa-solid fa-earth-americas"></i></li>
             </ul>
         </div>
@@ -42,32 +42,32 @@
         <div class="lenguage-sm"><i class="fa-solid fa-earth-americas"></i></div>
         <div class="navigation">
             <ul>
-                <li><a class= "to-section" href="#home">INICIO</a></li>
-                <li><a class= "to-section" href="#about">NOSOTROS</a></li>
-                <li><a class= "to-section" href="#principals">REPRESENTACIONES</a></li>
-                <li><a class= "to-section" href="#contact">CONTACTO</a></li>
+                <li><a class= "to-section homeBtn" href="#home">INICIO</a></li>
+                <li><a class= "to-section aboutBtn" href="#about">NOSOTROS</a></li>
+                <li><a class= "to-section principalsBtn" href="#principals">REPRESENTACIONES</a></li>
+                <li><a class= "to-section contactBtn" href="#contact">CONTACTO</a></li>
             </ul>
         </div>
     </div>
 
     <div class="lenguage-dropdown">
         <div><p>Seleccione su idioma</p></div>
-        <div class="spanish-div"><p class="spanish-p">Español</p></div>
-        <div class="english-div"><p class="usa-p">English</p></div>
+        <div class="spanish-div" language="spanish"><p class="spanish-p">Español</p></div>
+        <div class="english-div" language="english"><p class="usa-p">English</p></div>
     </div>
 
     <div class="home-background"></div></div>
 
     <div id="home" class="home-body">
         <div class="home-content">
-            <p class="spanish">Representación de ventas</p>
-            <p>Maquinaria y servicios especializados para la Industria en Argentina</p>
-            <a class="to-section" href="#contact"><button>Contáctenos</button></a>
+            <p class="mainTitle">Representación de ventas</p>
+            <p class="subTitle">Maquinaria y servicios especializados para la Industria en Argentina</p>
+            <a class="to-section" href="#contact"><button class="contRedirect">Contáctenos</button></a>
         </div>
     </div>
     
     <section id="about" class="about-body">
-        <h1>Sobre Nosotros</h1>
+        <h1 class="abtUsTitle">Sobre Nosotros</h1>
         <hr class="header-underline">
 
         <div class="about-content">
@@ -75,10 +75,10 @@
             <div class="about-card">
                 <div class="card-header">
                     <i class="fa-solid fa-briefcase"></i>
-                    <h1>Mision, visión, valores</h1>
+                    <h1 class="card1title">Mision, visión, valores</h1>
                 </div>
                 <hr>
-                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                <p class="about-text card1text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
@@ -86,10 +86,10 @@
             <div class="about-card">
                 <div class="card-header">
                     <i class="fa-solid fa-users"></i>
-                    <h1>Historia</h1>
+                    <h1 class="card2title">Historia</h1>
                 </div>
                 <hr>
-                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                <p class="about-text card2text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
@@ -97,10 +97,10 @@
             <div class="about-card" data-active>
                 <div class="card-header">
                     <i class="fa-solid fa-screwdriver-wrench"></i>
-                    <h1>Productos representados</h1>
+                    <h1 class="card3title">Productos representados</h1>
                 </div>
                 <hr>
-                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                <p class="about-text card3text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
                     nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
@@ -109,7 +109,7 @@
 
     <section id="principals" class="principals-body">
 
-        <h1>Representaciones</h1>
+        <h1 class="princTitle">Representaciones</h1>
         <hr class="header-underline">
         <div class="principals-content">
             <div class="logos-table">
@@ -204,19 +204,19 @@
 
     <section id="contact" class="contact-body">
 
-        <h1>Contacto</h1>
+        <h1 class="contTitle">Contacto</h1>
         <hr class="header-underline">
 
         <div class="contact-content">       
             <div class="contact-card">
                 <div class="contact-inputs">
-                    <input type="text" placeholder="Nombre" name ="name">
-                    <input type="text" placeholder="Apellido" name="lastName">
-                    <input type="text" placeholder="Email" name="email">
-                    <input type="text" placeholder="Teléfono" name="phone">
-                    <textarea name="message" id="" cols="30" rows="10" placeholder="Mensaje" name="message"></textarea>
-                    <button class="send-button" onclick=validateForm();>
-                        <span>Enviar</span>
+                    <input class="nameInp" type="text" placeholder="Nombre" name ="name">
+                    <input class="lastNameInp" type="text" placeholder="Apellido" name="lastName">
+                    <input class="emailInp" type="text" placeholder="Email" name="email">
+                    <input type="text" name="phone">
+                    <textarea class="messegeInp" cols="30" rows="10" placeholder="Mensaje" name="message"></textarea>
+                    <button class="send-button" onclick=verifyInfo(); onclick="collectInfo()">
+                        <span class="sendBtn">Enviar</span>
                         <i class="fa-regular fa-paper-plane"></i>
                     </button>
                 </div>
@@ -253,4 +253,5 @@
 </body>
 
 <script src="script/main.js"></script>
+<script src="script/translate.js"></script>
 </html>
