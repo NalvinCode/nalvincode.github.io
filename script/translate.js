@@ -1,6 +1,6 @@
 const lengButtons = document.querySelectorAll('div[language="spanish"], div[language="english"]')
 
-const pageElements = document.querySelectorAll('.homeBtn, .aboutBtn, .principalsBtn, .contactBtn, .mainTitle, .subTitle, .contRedirect, .abtUsTitle, .card1title, .card1text, .card2title, .card2text, .card3title, .card3text, .princTitle, .contTitle, .nameInp, .lastNameInp, .emailInp, .messegeInp, .sendBtn')
+const pageElements = document.querySelectorAll('.homeBtn, .aboutBtn, .principalsBtn, .contactBtn, .chooseLen, .mainTitle, .subTitle, .contRedirect, .abtUsTitle, .card1title, .card1text, .card2title, .card2text, .card3title, .card3text, .princTitle, .contTitle, .nameInp, .lastNameInp, .emailInp, .messegeInp, .sendBtn')
 
 
 var dataLeng = {
@@ -10,6 +10,7 @@ var dataLeng = {
         "aboutBtn": "ABOUT",
         "principalsBtn": "PRINCIPALS",
         "contactBtn": "CONTACT",
+        "chooseLen": "Choose your lenguage",
         "mainTitle": "Sales Representation",
         "subTitle": "Machines and services especialized for the Argentinian industry",
         "contRedirect": "Contact us",
@@ -35,6 +36,7 @@ var dataLeng = {
         "aboutBtn": "NOSOTROS",
         "principalsBtn": "REPRESENTACIONES",
         "contactBtn": "CONTACTO",
+        "chooseLen": "Seleccione su idioma",
         "mainTitle": "Representacion de ventas",
         "subTitle": "Maquinaria y servicios especializados para la Industria Argentina",
         "contRedirect": "Contáctenos",
