@@ -20,7 +20,7 @@
 body {
   padding: 0px;
   margin: 0px;
-  background-color: #f7f8f8;
+  background-color: #ffffff;
 }
 
 a {
@@ -52,7 +52,7 @@ p {
   background-color: #00000052;
   justify-content: space-around;
   align-items: center;
-  height: 10%;
+  height: 80px;
   width: 100%;
   position: fixed;
   top: 0;
@@ -169,7 +169,7 @@ p {
 .home-background {
   height: 100%;
   width: 100%;
-  background-image: url('../media/background-home-image.jpg');
+  background-image: url('../media/pipelines.jpg');
   background-position: center;
   position: absolute;
   z-index: -1;
@@ -183,20 +183,25 @@ p {
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .home-body .home-content {
   font-family: var(--home-body-font);
   font-weight: var(--home-body-weight);
   color: #f7f8f8;
-  margin-left: 50px;
-  padding-left: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 10px 0 10px;
 }
 
 .home-content p:nth-child(1) {
   display: block;
   font-size: 5.6rem;
-  margin: 0;
+  margin: 0.5rem;
+  text-align: center;
 }
 
 .home-content p:nth-child(2) {
@@ -204,22 +209,21 @@ p {
   font-size: 1.8rem;
   font-weight: 300;
   margin: 0;
+  text-align: center;
 }
 
 .home-content button {
   background-color: #d32f12;
-  position: absolute;
-  border-radius: 15px;
+  border-radius: 20px;
   border: none;
   font-family: var(--home-body-font);
   font-size: 1.7rem;
-  height: 45px;
-  width: 250px;
-  margin-top: 25px;
+  height: 60px;
+  width: 300px;
   color: #ffffff;
-  border: 1px solid #000000;
   transition: 0.2s;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .home-content button:hover,
@@ -228,15 +232,14 @@ p {
 }
 
 .about-body {
-  padding-top: 1rem;
 }
 
 .about-body .about-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 70vh;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .about-content .about-card {
@@ -245,7 +248,7 @@ p {
   box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
-  width: 25%;
+  width: 20%;
   border-radius: 15px;
   padding: 1rem;
   border: 1px solid rgb(130, 130, 130);
@@ -295,14 +298,14 @@ p {
 }
 
 .principals-body {
-  padding-top: 1rem;
+  background-color: #f7f8f8;
 }
 
 .principals-body .principals-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 70vh;
+  margin-bottom: 2rem;
 }
 
 .principals-content .logos-table {
@@ -325,10 +328,39 @@ p {
   transform: translateY(50%);
 }
 
-.logos-table .logo-row .logo-cell img {
-  height: 8em;
-  width: 8em;
+.logos-table .logo-row .logo-cell .logo-sprite {
   cursor: pointer;
+  width: 150px; 
+  height: 150px;
+  background-image: url('../media/principals-sprites150.png')
+}
+
+.crc-logo{
+  background-position: -190px -10px;
+}
+
+.applus-logo{
+  background-position: -20px -10px;
+}
+
+.gba-logo{
+  background-position: -360px -10px;
+}
+
+.plidco-logo{
+  background-position:  -870px -10px ;
+}
+
+.murphy-logo{
+  background-position: -700px -10px;
+}
+
+.tdw-logo{
+  background-position: -1040px -10px;
+}
+
+.jonell-logo{
+  background-position: -530px -10px;
 }
 
 .logos-table .logo-row .logo-cell p {
@@ -348,7 +380,6 @@ p {
 }
 
 .contact-body {
-  padding-top: 1rem;
 }
 
 .contact-body .contact-content {
@@ -356,12 +387,10 @@ p {
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
-  height: 70vh;
 }
 
 .contact-body .contact-card {
   display: flex;
-  position: absolute;
   background-color: #ffffff;
   box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
   -webkit-box-shadow: -9px 9px 13px 1px rgba(0, 0, 0, 0.42);
@@ -480,7 +509,7 @@ p {
   height: 2.5rem;
   width: 7rem;
   color: #ffffff;
-  border: 1px solid black;
+  border: 0px;
   transition: 0.2s;
   cursor: pointer;
   margin-bottom: 0;
@@ -499,11 +528,13 @@ p {
 
 .footer-body {
   display: flex;
+  margin-top: 5rem;
   justify-content: center;
   align-items: center;
   background-color: #2e2d2d;
   color: #ffffff;
   font-family: var(--home-body-font);
+  height: 20vh;
 }
 
 .footer-body i {
@@ -535,8 +566,7 @@ p {
 
   .home-content button {
     font-size: 1.5rem;
-    height: 40px;
-    width: 200px;
+    bottom: 25vh;
   }
 
   .about-content .about-card {
@@ -555,11 +585,38 @@ p {
     font-size: 1rem;
   }
 
-  .logos-table .logo-row .logo-cell img {
-    height: 6em;
-    width: 6em;
-    transition: 0.2s;
-    cursor: pointer;
+  .logos-table .logo-row .logo-cell .logo-sprite {
+    width: 125px; 
+    height: 125px;
+    background-image: url('../media/principals-sprites125.png')
+  }
+
+  .crc-logo{
+    background-position: -165px -10px;
+  }
+  
+  .applus-logo{
+    background-position: -20px -10px;
+  }
+  
+  .gba-logo{
+    background-position: -310px -10px;
+  }
+  
+  .plidco-logo{
+    background-position: -745px -10px ;
+  }
+  
+  .murphy-logo{
+    background-position: -600px -10px;
+  }
+  
+  .tdw-logo{
+    background-position: -890px -10px;
+  }
+  
+  .jonell-logo{
+    background-position: -455px -10px;
   }
 
   .contact-inputs textarea {
@@ -652,7 +709,6 @@ p {
 
   .home-body .home-content {
     margin: 0px;
-    padding: 0 10px 0 10px;
   }
 
   .home-content p:nth-child(1) {
@@ -669,12 +725,11 @@ p {
   }
 
   .home-content button {
-    font-size: 1.1rem;
-    width: 150px;
+    font-size: 1.4rem;
+    width: 270px;
   }
 
   .about-body {
-    padding-top: 2rem;
   }
 
   .about-body .about-content {
@@ -695,7 +750,6 @@ p {
   }
 
   .principals-body {
-    padding-top: 2rem;
     height: auto;
   }
 
@@ -726,9 +780,38 @@ p {
     text-align: center;
   }
 
-  .logos-table-sm .logo-row .logo-cell img {
-    height: 6em;
-    width: 6em;
+  .logos-table-sm .logo-row .logo-cell .logo-sprite {
+    width: 100px; 
+    height: 100px;
+    background-image: url('../media/principals-sprites100.png')
+  }
+
+  .crc-logo{
+    background-position: -140px -10px;
+  }
+  
+  .applus-logo{
+    background-position: -20px -10px;
+  }
+  
+  .gba-logo{
+    background-position: -260px -10px;
+  }
+  
+  .plidco-logo{
+    background-position: -620px -10px;
+  }
+  
+  .murphy-logo{
+    background-position: -500px -10px;
+  }
+  
+  .tdw-logo{
+    background-position: -740px -10px;
+  }
+  
+  .jonell-logo{
+    background-position: -380px -10px;
   }
 
   .logos-table-sm .logo-row .logo-cell hr {
@@ -736,7 +819,6 @@ p {
   }
 
   .contact-body {
-    padding-top: 2rem;
     height: auto;
   }
 

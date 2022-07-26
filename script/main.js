@@ -40,7 +40,7 @@ $( document ).ready(function() {
 const observerOptions = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.45
+    threshold: 0.50
 }
 
 const observer = new IntersectionObserver( (entries, observer) => {
@@ -70,6 +70,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 break;
                 case prinBody:
                     $(navItems[2]).css("color", "#ffffff");
+                    navbar.classList.add('dark');
                     aTemp = 0.75
                     let logos = document.querySelectorAll(".logos-table .logo-row, .logos-table-sm .logo-row");
                     for(let i = 0; i < logos.length; i++){
@@ -79,6 +80,7 @@ const observer = new IntersectionObserver( (entries, observer) => {
                 break;
                 case contBody:
                     $(navItems[3]).css("color", "#ffffff");
+                    navbar.classList.add('dark');
                     $(contCard).css({"transition" : "0.75s", "opacity" : "1" , "transform" : "translate(0)"});
                 break;
                 default:
@@ -88,11 +90,18 @@ const observer = new IntersectionObserver( (entries, observer) => {
     })
 }, observerOptions);
 
-
-observer.observe(homeBody);
-observer.observe(aboutBody);
-observer.observe(prinBody);
-observer.observe(contBody);
+if(homeBody){
+    observer.observe(homeBody);
+}
+if(aboutBody){
+    observer.observe(aboutBody);
+}
+if(prinBody){
+    observer.observe(prinBody);
+}
+if(contBody){
+    observer.observe(contBody);
+}
 
 //Scroll-to animation
 
@@ -116,24 +125,48 @@ logos_a.forEach(item => {
     //Logo underline expand when hover the logo
     item.addEventListener("mouseover", function(){
         let anchor = $(item);
-        let img = anchor.children("img");
-        let src = img.attr("src");
-        src = src.slice(0, src.indexOf(".")) + "_C.png";
-        img.attr("src", src);
+        let div = anchor.children("div");
+        let backPos = div.css('background-position');
+        backPos = getBackPosition(window.screen.width, backPos, "mouseover");
+        div.css('background-position', backPos);
         anchor.next().css("width", "90%");
         anchor.next().css("background-color", "#d32f12");
     });
     //Logo underline contract when unhover the logo
     item.addEventListener("mouseout", function(){
         let anchor = $(item);
-        let img = anchor.children("img");
-        let src = img.attr("src");
-        src = src.slice(0, src.indexOf("_")) + ".png";
-        img.attr("src", src);
+        let div = anchor.children("div");
+        let backPos = div.css('background-position');
+        backPos = getBackPosition(window.screen.width, backPos, "mouseout");
+        div.css('background-position', backPos);
         anchor.next().css("width", "40%");
         anchor.next().css("background-color", "#828282");
     });
   })
+
+function getBackPosition(screenSize, backPos, event){
+
+    dif = 190
+    positions = backPos.split(" ")
+
+    if(screenSize <= 1600){
+        dif = 165 
+    }
+
+    for (let i in positions){
+        positions[i].slice(0, positions[i].indexOf("px"));
+        positions[i] = parseInt(positions[i])
+    }
+
+    if(event == "mouseover"){
+        positions[1] = positions[1] - dif
+
+    }else{
+        positions[1] = positions[1] + dif
+    }
+
+    return "" + positions[0] + "px" +  " " + positions[1] + "px" + ""
+}
 
 lengBtns.forEach(e => {
     e.addEventListener("click", function(){
@@ -158,7 +191,7 @@ lengBtns.forEach(e => {
                 if(e == document.querySelector(".lenguage-sm")){
                     $(lengDropdown).css("transform", "translate(" + moveTo + "px, 5px)");
                 }else{
-                    $(lengDropdown).css("transform", "translateX(" + moveTo + "px)");
+                    $(lengDropdown).css("transform", "translate(" + moveTo + "px)");
                 }
             }
     
@@ -197,7 +230,7 @@ hamBtns.forEach(e => {
 //Form dinamic validator
 
 formFields.forEach(element => {
-    $(element).bind("input focusin", function(){validateForm(element)});
+    $(element).bind("input focusin", function(){let isValid = validateForm(element); setFieldColor(element, isValid)});
 
     element.addEventListener("focusout", function(){
         $(element).css("border-color", "#828282");
@@ -249,8 +282,6 @@ function validateForm(element){
             }
         break;
     }
-
-    setFieldColor(element, isValid);
     return isValid
 }
 
